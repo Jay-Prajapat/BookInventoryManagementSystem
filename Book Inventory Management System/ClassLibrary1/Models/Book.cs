@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace ClassLibrary1.Models
@@ -16,7 +18,7 @@ namespace ClassLibrary1.Models
         [RegularExpression(@"[a-zA-Z0-9 ]+$", ErrorMessage = "Title contains alphabets and number only.")]
         public string Title { get; set; }
         [Required]
-        [RegularExpression(@"[a-zA-Z ]+$", ErrorMessage = "Author name must contains alphabets only.")]
+        [RegularExpression(@"[a-zA-Z. ]+$", ErrorMessage = "Author name must contains alphabets only.")]
         public string Author { get; set; }
 
         public string Genre { get; set; }
@@ -30,7 +32,9 @@ namespace ClassLibrary1.Models
         public string Description { get; set; }
         [Required]
         [Display(Name = "Upload Image")]
-        public string CoverImage { get; set; }
+        public string CoverImage { get; set; } = "~/Image/Default.jpg";
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
         public bool IsDeleted { get; set; } = false;
     }
 }

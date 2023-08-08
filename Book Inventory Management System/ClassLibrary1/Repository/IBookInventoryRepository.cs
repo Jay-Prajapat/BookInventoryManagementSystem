@@ -14,5 +14,7 @@ namespace ClassLibrary1.Repository
         Task DeleteBook(int id);
         Task UpdateBookDetails(Book book);
         Task AddBookDetails(Book book);
+
+        IEnumerable<Book> GetBooksDetailsBySearchValue(string searchValue);
     }
 }

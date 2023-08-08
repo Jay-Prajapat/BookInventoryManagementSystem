@@ -19,5 +19,6 @@ namespace ClassLibrary1.DAL
         
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Users> Users { get; set; } 
     }
 }
