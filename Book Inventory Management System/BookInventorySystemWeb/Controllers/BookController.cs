@@ -4,15 +4,18 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Permissions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace BookInventorySystemWeb.Controllers
 {
+    [Authorize]
     public class BookController : Controller
     {
         private readonly IBookInventoryRepository _bookInventoryRepository;
@@ -113,5 +116,6 @@ namespace BookInventorySystemWeb.Controllers
             var result = _bookInventoryRepository.GetBooksDetailsBySearchValue(searchValue).ToPagedList(page ?? 1,5);
             return PartialView("_GetBookData",result);
         }
+        
     }
 }

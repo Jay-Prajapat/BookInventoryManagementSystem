@@ -1,9 +1,12 @@
-﻿using System;
+﻿using ClassLibrary1.LocalResource;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Services.Providers;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ClassLibrary1.Models
 {
@@ -13,6 +16,7 @@ namespace ClassLibrary1.Models
         public int UserId { get; set; }
         [Required]
         [Display(Name ="User Name")]
+        
         [RegularExpression("^[a-zA-Z0-9_-]{4,20}$",ErrorMessage = "User Name must be between 4 and 20 characters and contain only latters, numbers, underscores or hyphens.")]
         public string UserName { get; set; }
         

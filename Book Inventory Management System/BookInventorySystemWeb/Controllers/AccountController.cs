@@ -1,6 +1,6 @@
-﻿using BookInventorySystemWeb.Models;
-using ClassLibrary1.Models;
+﻿using ClassLibrary1.Models;
 using ClassLibrary1.Repository;
+using ClassLibrary1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,10 +31,13 @@ namespace BookInventorySystemWeb.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(LoginViewModel user)
         {
-            if(! await _userRepository.IsValidUser(user))
+            if (ModelState.IsValid)
             {
-                FormsAuthentication.SetAuthCookie(user.UserName, false);
-                return RedirectToAction("Index", "Book");
+                if (await _userRepository.IsValidUser(user))
+                {
+                    FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    return RedirectToAction("Index", "Book");
+                }
             }
             ModelState.AddModelError("", "Invalid UserName or Password.");
             return View(user);
@@ -48,11 +51,15 @@ namespace BookInventorySystemWeb.Controllers
         [HttpPost]
         public async Task<ActionResult> SignUp(Users user)
         {
-            if (!await _userRepository.IsUserExist(user))
+            if (ModelState.IsValid)
             {
-                await _userRepository.AddUser(user);
-                return RedirectToAction("Login");
+                if (!await _userRepository.IsUserExist(user))
+                {
+                    await _userRepository.AddUser(user);
+                    return RedirectToAction("Login");
+                }
             }
+            
             return View(user);
         }
 

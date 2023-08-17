@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+
 
 <div>
-    @Html.TextBox("txtSearch", null, new { placeholder = "Search by Name,Author,Genre..." })
+    @Html.TextBox("txtSearch", null, new { @class = "txtSearch" ,placeholder = "Search by Name,Author,Genre..." })
 </div>
 
 <div id="main_content">

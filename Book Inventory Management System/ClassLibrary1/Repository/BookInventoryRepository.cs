@@ -42,7 +42,7 @@ namespace ClassLibrary1.Repository
 
         public IEnumerable<Book> GetBooksDetailsBySearchValue(string searchValue)
         {
-            return  _dbContext.Books.Where(b => b.Title.Contains(searchValue) || b.Author.Contains(searchValue) || b.Genre.Contains(searchValue)).ToList();
+            return  _dbContext.Books.Where(b => (b.Title.Contains(searchValue) || b.Author.Contains(searchValue) || b.Genre.Contains(searchValue)) && b.IsDeleted == false).ToList();
         }
 
         public async Task UpdateBookDetails(Book bookToUpdate)
