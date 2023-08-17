@@ -1,0 +1,109 @@
+﻿@using System.Globalization
+@using ClassLibrary1.LocalResource
+@{
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Book Inventory Management System", "Index", "Book", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between float-end">
+                <ul class="navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item" style="color:white">Hello -@User.Identity.Name</li>
+                        <li class="nav-item">@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">@Html.ActionLink("Login", "Login", "Account")</li>
+                    }
+                </ul>
+            </div>
+            <div>
+                @{ 
+                    string selectedLanguage = Request.Cookies["Language"]?.Value;
+                }
+                <label for="SelectedLanguage">Select a Language:</label>
+                <select id="SelectedLanguage" name="SelectedLanguage" class="form-control">
+
+                    <option value="en" @Html.Raw(selectedLanguage == "en" ? "selected='selected'":"")>
+                        English
+                    </option>
+                    <option value="fr" @Html.Raw(selectedLanguage == "fr" ? "selected='selected'":"")>
+                        French
+                    </option>
+                    <option value="es" @Html.Raw(selectedLanguage == "es" ? "selected='selected'":"")>
+                        Spanish
+                    </option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            @*document.getElementById("SelectedLanguage").addEventListener('change', function () {
+                var selectedLanguage = $(this).val();
+                
+                switch (selectedLanguage) {
+                    case 'en':
+                        window.location.href = "@Url.Action("ChangeLanguage", "Language", new { selectedLanguage=$"en"})";
+                        break;
+                    case 'fr':
+                        window.location.href = "@Url.Action("ChangeLanguage", "Language", new { selectedLanguage="fr"})";
+                        break;
+                    case 'es':
+                        window.location.href = "@Url.Action("ChangeLanguage", "Language", new { selectedLanguage="es"})";
+                        break;
+
+                }
+            })*@
+            $("#SelectedLanguage").change(function () {
+                var selectedLanguage = $(this).val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("ChangeLanguage","Language")",
+                    data: { selectedLanguage },
+                    dataType: 'html',
+                    success: function (result) {
+                        window.location.reload();
+                    },
+                    error: function (err) {
+                        alert("An error occured while processing your request.");
+                    }
+                });
+            });
+        });
+        
+    </script>

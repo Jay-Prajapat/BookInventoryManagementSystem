@@ -1,0 +1,78 @@
+﻿@model ClassLibrary1.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>Book Details</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.QuantityInStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityInStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.CoverImage)
+        </dt>
+        @if (!string.IsNullOrEmpty(Model.CoverImage))
+        {
+            <dd>
+                <img src="@Url.Content(@Model.CoverImage)" width="100px" height="150px" />
+            </dd>
+        }
+
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) 
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-primary" })
+</p>

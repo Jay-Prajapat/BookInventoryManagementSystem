@@ -1,0 +1,78 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<ClassLibrary1.Models.Book>
+
+<p>
+    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Title)
+        </th>
+        <th>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Author)
+        </th>
+        <th>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Genre)
+        </th>
+        <th>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.QuantityInStock)
+        </th>
+        <th>
+            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", new {id = item.Id})">@item.Title</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantityInStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new {@class = "btn btn-warning"}) 
+                
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new {@class = "btn btn-danger"})
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<div>
+    <ul class="pagination">
+        @if (Model.PageCount > 1)
+        {
+            <li class="page-item @(Model.PageNumber == 1 ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber - 1 })">Previous</a>
+            </li>
+
+            for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+
+            <li class="page-item @(Model.PageNumber == Model.PageCount ? "disabled" : "")">
+                <a class="page-link" href="@Url.Action("Index", new { page = Model.PageNumber + 1 })">Next</a>
+            </li>
+        }
+    </ul>
+</div>
