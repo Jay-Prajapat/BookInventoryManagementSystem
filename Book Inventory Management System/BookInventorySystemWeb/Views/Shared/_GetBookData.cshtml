@@ -1,7 +1,7 @@
 ﻿@using PagedList;
 @using PagedList.Mvc;
 
-@model IPagedList<ClassLibrary1.Models.Book>
+@model IPagedList<BookDataAccessLayer.Models.Book>
 
 <p>
     @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-primary" })
@@ -9,19 +9,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Title)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Title)
         </th>
         <th>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Author)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Author)
         </th>
         <th>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Genre)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Genre)
         </th>
         <th>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.QuantityInStock)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.QuantityInStock)
         </th>
         <th>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Price)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Price)
         </th>
         <th></th>
     </tr>

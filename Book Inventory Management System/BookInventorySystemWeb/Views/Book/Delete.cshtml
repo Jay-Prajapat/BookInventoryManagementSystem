@@ -1,4 +1,4 @@
-﻿@model ClassLibrary1.Models.Book
+﻿@model BookDataAccessLayer.Models.Book
 
 @{
     ViewBag.Title = "Delete";
@@ -10,7 +10,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Title)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Title)
         </dt>
 
         <dd>
@@ -18,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Author)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Author)
         </dt>
 
         <dd>
@@ -26,14 +26,14 @@
         </dd>
 
         <dt>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.Genre)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.Genre)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Genre)
         </dd>
         <dt>
-            @Html.DisplayName(ClassLibrary1.LocalResource.Resource.CoverImage)
+            @Html.DisplayName(BookDataAccessLayer.LocalResource.Resource.CoverImage)
         </dt>
 
         @if (!string.IsNullOrEmpty(Model.CoverImage))

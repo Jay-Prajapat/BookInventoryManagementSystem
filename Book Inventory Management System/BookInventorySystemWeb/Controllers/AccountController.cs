@@ -1,6 +1,6 @@
-﻿using ClassLibrary1.Models;
-using ClassLibrary1.Repository;
-using ClassLibrary1.ViewModels;
+﻿using BookDataAccessLayer.Models;
+using BookDataAccessLayer.Repository;
+using BookDataAccessLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

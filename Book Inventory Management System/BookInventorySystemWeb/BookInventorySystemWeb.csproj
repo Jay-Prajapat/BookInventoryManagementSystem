@@ -231,9 +231,9 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
-      <Project>{c5f4b379-4a65-496d-ac22-9e74433ece1d}</Project>
-      <Name>ClassLibrary1</Name>
+    <ProjectReference Include="..\BookDataAccessLayer\BookDataAccessLayer.csproj">
+      <Project>{c3f486ab-4f77-46d6-acfe-fc0899539b0d}</Project>
+      <Name>BookDataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

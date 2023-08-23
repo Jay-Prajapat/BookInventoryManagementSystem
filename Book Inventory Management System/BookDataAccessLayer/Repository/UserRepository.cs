@@ -1,17 +1,16 @@
-﻿using ClassLibrary1.DAL;
-using ClassLibrary1.Models;
+﻿using BookDataAccessLayer.DAL;
+using BookDataAccessLayer.Models;
+using BookDataAccessLayer.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
-using ClassLibrary1.ViewModels;
 
-namespace ClassLibrary1.Repository
+namespace BookDataAccessLayer.Repository
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository:IUserRepository
     {
         private readonly BookInventoryEntity _dbContext;
         public UserRepository()

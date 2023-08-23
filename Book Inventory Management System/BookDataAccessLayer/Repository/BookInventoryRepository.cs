@@ -1,5 +1,5 @@
-﻿using ClassLibrary1.DAL;
-using ClassLibrary1.Models;
+﻿using BookDataAccessLayer.DAL;
+using BookDataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.Repository
+namespace BookDataAccessLayer.Repository
 {
     public class BookInventoryRepository:IBookInventoryRepository
     {
@@ -17,7 +17,7 @@ namespace ClassLibrary1.Repository
         {
             _dbContext = BookDataAccess.GetInstance();
         }
-        public async  Task AddBookDetails(Book book)
+        public async Task AddBookDetails(Book book)
         {
             _dbContext.Books.Add(book);
             await _dbContext.SaveChangesAsync();
@@ -42,7 +42,7 @@ namespace ClassLibrary1.Repository
 
         public IEnumerable<Book> GetBooksDetailsBySearchValue(string searchValue)
         {
-            return  _dbContext.Books.Where(b => (b.Title.Contains(searchValue) || b.Author.Contains(searchValue) || b.Genre.Contains(searchValue)) && b.IsDeleted == false).ToList();
+            return _dbContext.Books.Where(b => (b.Title.Contains(searchValue) || b.Author.Contains(searchValue) || b.Genre.Contains(searchValue)) && b.IsDeleted == false).ToList();
         }
 
         public async Task UpdateBookDetails(Book bookToUpdate)

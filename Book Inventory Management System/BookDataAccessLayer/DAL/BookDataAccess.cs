@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.DAL
+namespace BookDataAccessLayer.DAL
 {
     public sealed class BookDataAccess
     {
@@ -30,3 +30,4 @@ namespace ClassLibrary1.DAL
         }
     }
 }
+

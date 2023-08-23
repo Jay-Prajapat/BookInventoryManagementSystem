@@ -1,18 +1,18 @@
-﻿namespace ClassLibrary1.Migrations
+﻿namespace BookDataAccessLayer.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ClassLibrary1.DAL.BookInventoryEntity>
+    internal sealed class Configuration : DbMigrationsConfiguration<BookDataAccessLayer.DAL.BookInventoryEntity>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ClassLibrary1.DAL.BookInventoryEntity context)
+        protected override void Seed(BookDataAccessLayer.DAL.BookInventoryEntity context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -1,11 +1,11 @@
-﻿using ClassLibrary1.Models;
+﻿using BookDataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.Repository
+namespace BookDataAccessLayer.Repository
 {
     public interface IBookInventoryRepository
     {

@@ -117,37 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Author" xml:space="preserve">
-    <value>Author</value>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAM1ZzW7jNhC+F+g7CDq1QNbKz2UbyLvI2klhND/uKrt3Who7RCjSJak0frY99JH6Ch1K1L9sy3HiFL7II87H4XBm+A31749//M/PMXOeQCoq+NA9GRy7DvBQRJQvhm6i5x8+up8//fyTfxnFz873fNyZGYeaXA3dB62X556nwgeIiRrENJRCibkehCL2SCS80+Pj37yTEw8QwkUsx/G/JlzTGNI/+HckeAhLnRB2IyJgysrxTZCiOrckBrUkIQzdL0I8jokmF2EISl2TFcjB+OLadS4YJWhOAGzuOoRzoYlGY8+/KQi0FHwRLFFA2P1qCThuTpgCu4jzcnjf9RyfmvV4pWIOFSZKi3hHwJMz6yCvqf4iN7uFA9GFl+hqvTKrTt2YedB1mhOdj5g0g7o9nO3LwLw6cjoGHBWxgSFkfkfOKGE6kTDkkGhJ2JEzTWaMhn/A6l48Ah/yhLGqoWgqvqsJUDSVYglSr77C3Jo/iVzHq+t5TcVCraKTLW7C9dmp69zi5GTGoIiDiiMCLST8Dhwk0RBNidYgucGA1JOt2Rtz3VPNIJ8OIw8zyXVuyPM18IV+GLr46DpX9BmiXGJN+MYpJh4qaZlAh4mbp71I9IOQh58XHSVfY7mbZ/kzIanzJxx3J3zctpubwaaShoXJYwhpTJjrTCU+2TL40XWCkBjA3dHHoEJJl1nyvrFbRgJL9yQmi3cIuIkaAwPMkHxqLAsMCN8C5HtlQdpYprBuS/XCOpXqvnehMka8pFjleocqWGY+83T4EJoSpf4WMjr8zJcxoeytp90c6kh6NKG4aZVjecKfcM+EXF3anWtFP26WTQBlbaivM1MMQFdQMYtKQzKGNMhIgLdZ2aZgS9nKu9ZarKrkcF5G4nKy561he/4NWS5xHyrsz0qcIKN+ow/B7nQozjC8UHWwosLaYiZ0PlbTxltTaCO4olJpU05mxOz0KIpbw7r2cI2L8xmr29SsKaXj89HmudTo4MHZxjaASlde4epiNC9dKBTGWFLYUksZOGFEdvCpkWBJzNdxsk3aliFVAayoP0ZOd6oguaw/iiUvVRAr6o/RoiZVtNbL/riWpVTRrKg/Ro2LVJFqL/rjVflGFa4q749WYRC1YCrFbSzfa0RyM2e8VtI0jt9mBvbKz6zivUZ+diL1SNA1eut8m5OIqmO7Cck2lIwaNHEy6Q7RXBz1tYAupP2R7NFdhbGiA0dL68hrDilmL46+xhHn2+Nm+61H6/zJhpiuRTzRyJw9wUppiAdmwCD4i40YxfWWA24Ip3NQOuO07unxyWnjzuT/c3/hKRWxHpcYB789oMajW+n2jly0dmHAn4gMH4j8JSbPv+55CbAfVq2xXwu1R/OeOnOf1j06QOu+18Lb7fl+W9JquWd0mwt3bLffrc19k8xqdrb7eb/Zre6HVutAd4HaratsNy7b+8W17WJ26GDizQRanlloG8z9Osku4P2azPbJ6nvVrw4+5jpdlBDmGwSH0KR+CZqPmfC5yLcP11S1KB/S2N0b0CQy7E9qOiehxteGBqbXDN8JS9IAmEE04XeJXib6QimIZ6x2V+N7m+dPO+m6zf5dWrzUaywBzaS4BLjjXxLKosLuq46QXANhgs+mM1oVaJPWi1WBdCt4TyDrvjEsgZticA/xkiGYuuMBeYKX2IbhdQ0LEq5ygrQeZPtG1N3ujylZSBIri1Hqmy9pnvmU9uk/9Hfa4HwbAAA=</value>
   </data>
-  <data name="CoverImage" xml:space="preserve">
-    <value>Cover Image</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Description</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>Email Id</value>
-  </data>
-  <data name="Genre" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="Password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="Price" xml:space="preserve">
-    <value>Price</value>
-  </data>
-  <data name="QuantityInStock" xml:space="preserve">
-    <value>QuantityInStock</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="Upload Image" xml:space="preserve">
-    <value>Upload Image</value>
-  </data>
-  <data name="User Name" xml:space="preserve">
-    <value>User Name</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>
